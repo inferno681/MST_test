@@ -43,12 +43,9 @@ def get_image_directory(system: str, release: str) -> str:
         raise Exception(f'Операционная система {system} не поддерживается.')
 
 
-def click_button(image_path: str)->None:
-    """
-    Ищет на экране кнопку с изображением и кликает по ней.
+def click_button(image_path: str) -> None:
+    """Ищет на экране кнопку с изображением и кликает по ней."""
 
-    :param image_path: Путь к изображению кнопки.
-    """
     try:
         location = pyautogui.locateOnScreen(
             image_path, confidence=0.9, grayscale=True
@@ -61,6 +58,7 @@ def click_button(image_path: str)->None:
 
 
 def main():
+    """Открывает приложение 'калькулятор' и нажимает соответствующие кнопки."""
     system = platform.system()
     release = platform.release()
 
